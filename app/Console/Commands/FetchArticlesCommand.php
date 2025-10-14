@@ -8,7 +8,7 @@ use App\Services\Fetch\{NewsApiService, GuardianService, BbcNewsService, NewYork
 class FetchArticlesCommand extends Command
 {
     protected $signature = 'articles:fetch';
-    protected $description = 'Fetch articles from NewsAPI, Guardian, BBC';
+    protected $description = 'Fetch articles from NewsAPI, Guardian, MyTimes';
 
     public function handle(): void
     {
