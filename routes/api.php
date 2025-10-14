@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\{ArticleController, SourceController, CategoryController};
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('articles', [ArticleController::class, 'index']);
+Route::get('sources', [SourceController::class, 'index']);
+Route::get('categories', [CategoryController::class, 'index']);

@@ -12,7 +12,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        // Run on every hour
+        // ->withoutOverlapping(); is to avoid multiple command to run at the same time we can remove or keep this.
+        $schedule->command('articles:fetch')->hourly()->withoutOverlapping();
+        // Run once every day at 00:00
+        $schedule->command('articles:fetch')->dailyAt('00:00')->withoutOverlapping();;
     }
 
     /**
